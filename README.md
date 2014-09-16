@@ -50,6 +50,16 @@ Don't forget to add the tracker script at the end of the HTML document, for exam
 </html>
 ```
 
+### Development environment
+
+In some environments, you want to disable Piwik's tracking (for example on your local machine).
+That is easily possible by passing `false` for the `$enabled` parameter:
+
+```php
+$twig->addExtension(new PiwikTwigExtension($host, $siteId, false));
+```
+
+
 ## License
 
 This library is released under the [MIT license](http://opensource.org/licenses/MIT).

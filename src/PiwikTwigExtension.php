@@ -23,10 +23,18 @@ class PiwikTwigExtension extends Twig_Extension
      */
     private $siteId;
 
-    public function __construct($piwikHost = null, $siteId = null)
+    /**
+     * Useful for disabling Piwik tracking in dev environment.
+     *
+     * @var bool
+     */
+    private $enabled = true;
+
+    public function __construct($piwikHost = null, $siteId = null, $enabled = true)
     {
         $this->piwikHost = $piwikHost;
         $this->siteId = $siteId;
+        $this->enabled = (bool) $enabled;
     }
 
     public function getName()
@@ -45,6 +53,11 @@ class PiwikTwigExtension extends Twig_Extension
         ];
     }
 
+    /**
+     * @param string|null $piwikHost
+     * @param string|null $siteId
+     * @return string
+     */
     public function generatePiwikTrackerCode($piwikHost = null, $siteId = null)
     {
         $piwikHost = $piwikHost ?: $this->piwikHost;
@@ -55,6 +68,11 @@ class PiwikTwigExtension extends Twig_Extension
         }
         if ($siteId === null) {
             throw new InvalidArgumentException('No Piwik site ID was configured or given to generate the tracker code');
+        }
+
+        // Check only now so that exceptions are still thrown in dev environment
+        if (! $this->enabled) {
+            return '';
         }
 
         $piwikHost = rtrim($piwikHost, '/');
