@@ -1,5 +1,7 @@
 # Piwik Twig integration
 
+[![Build Status](https://travis-ci.org/mnapoli/PiwikTwigExtension.svg)](https://travis-ci.org/mnapoli/PiwikTwigExtension) [![Coverage Status](https://img.shields.io/coveralls/mnapoli/PiwikTwigExtension.svg)](https://coveralls.io/r/mnapoli/PiwikTwigExtension)
+
 This library integrates Piwik into Twig.
 
 ## Installation
@@ -10,20 +12,20 @@ This library integrates Piwik into Twig.
 
 You have 2 ways to give the Piwik host and site ID:
 
-- when creating the extension:
+- When creating the extension (**recommended**)
 
 ```php
-$twig->addExtension(new \PiwikTwigExtension\PiwikTwigExtension('mypiwik.host.com', 123));
+$twig->addExtension(new PiwikTwigExtension('my-piwik-host.com', 123));
 ```
 
 In the templates, you then just call `{{ piwik() }}`.
 
 This solution is appropriate in most cases.
 
-- when calling the Twig function:
+- When calling the Twig function
 
 ```php
-$twig->addExtension(new \PiwikTwigExtension\PiwikTwigExtension());
+$twig->addExtension(new PiwikTwigExtension());
 ```
 
 In the templates, you have to provide the host and site id: `{{ piwik('mypiwik.host.com', 123) }}`.
