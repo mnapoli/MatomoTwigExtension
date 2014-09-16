@@ -5,4 +5,3 @@ Calling "piwik" function without parameters when the extension is disabled
 --DATA--
 return array();
 --EXPECT--
-Twig_Error: Twig_Error_Runtime: An exception has been thrown during the rendering of a template ("No Piwik host was configured or given to generate the tracker code") in "index.twig" at line 2 in "EmptyFunctionCall.test".
