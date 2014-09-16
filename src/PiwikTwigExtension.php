@@ -48,8 +48,7 @@ class PiwikTwigExtension extends Twig_Extension
     public function generatePiwikTrackerCode($piwikHost = null, $siteId = null)
     {
         $piwikHost = $piwikHost ?: $this->piwikHost;
-        $piwikHost = rtrim($piwikHost, '/');
-        $siteId = $siteId ?: $this->piwikHost;
+        $siteId = $siteId ?: $this->siteId;
 
         if ($piwikHost === null) {
             throw new InvalidArgumentException('No Piwik host was configured or given to generate the tracker code');
@@ -57,6 +56,8 @@ class PiwikTwigExtension extends Twig_Extension
         if ($siteId === null) {
             throw new InvalidArgumentException('No Piwik site ID was configured or given to generate the tracker code');
         }
+
+        $piwikHost = rtrim($piwikHost, '/');
 
         $code = <<<HTML
 <!-- Piwik -->
