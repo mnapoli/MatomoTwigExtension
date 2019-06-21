@@ -3,9 +3,9 @@
 namespace Tests\PiwikTwigExtension;
 
 use PiwikTwigExtension\PiwikTwigExtension;
-use Twig_Test_IntegrationTestCase;
+use Twig\Test\IntegrationTestCase;
 
-class NotConfiguredExtensionTest extends Twig_Test_IntegrationTestCase
+class NotConfiguredExtensionTest extends IntegrationTestCase
 {
     protected function getExtensions()
     {

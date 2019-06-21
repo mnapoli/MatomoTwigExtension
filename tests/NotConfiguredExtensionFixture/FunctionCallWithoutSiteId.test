@@ -5,4 +5,4 @@ Calling "piwik" function without the "site id" parameters, leading to an error
 --DATA--
 return array();
 --EXPECT--
-Twig_Error: Twig_Error_Runtime: An exception has been thrown during the rendering of a template ("No Piwik site ID was configured or given to generate the tracker code") in "index.twig" at line 2 in "FunctionCallWithoutSiteId.test".
+Twig\Error\Error: Twig\Error\RuntimeError: An exception has been thrown during the rendering of a template ("No Piwik site ID was configured or given to generate the tracker code") in "index.twig" at line 2.
