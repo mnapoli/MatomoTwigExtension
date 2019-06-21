@@ -3,15 +3,15 @@
 namespace PiwikTwigExtension;
 
 use InvalidArgumentException;
-use Twig_Extension;
-use Twig_SimpleFunction;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
 
 /**
  * Twig extension for Piwik integration.
  *
  * @author Matthieu Napoli <matthieu@mnapoli.fr>
  */
-class PiwikTwigExtension extends Twig_Extension
+class PiwikTwigExtension extends AbstractExtension
 {
     /**
      * @var string|null
@@ -45,7 +45,7 @@ class PiwikTwigExtension extends Twig_Extension
     public function getFunctions()
     {
         return [
-            new Twig_SimpleFunction(
+            new TwigFunction(
                 'piwik',
                 [$this, 'generatePiwikTrackerCode'],
                 ['is_safe' => ['html']]
@@ -56,21 +56,22 @@ class PiwikTwigExtension extends Twig_Extension
     /**
      * @param string|null $piwikHost
      * @param string|null $siteId
+     *
      * @return string
      */
     public function generatePiwikTrackerCode($piwikHost = null, $siteId = null)
     {
-        if (! $this->enabled) {
+        if (!$this->enabled) {
             return '';
         }
 
         $piwikHost = $piwikHost ?: $this->piwikHost;
         $siteId = $siteId ?: $this->siteId;
 
-        if ($piwikHost === null) {
+        if (null === $piwikHost) {
             throw new InvalidArgumentException('No Piwik host was configured or given to generate the tracker code');
         }
-        if ($siteId === null) {
+        if (null === $siteId) {
             throw new InvalidArgumentException('No Piwik site ID was configured or given to generate the tracker code');
         }
 

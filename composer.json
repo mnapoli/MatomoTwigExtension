@@ -18,6 +18,7 @@
     },
     "require-dev": {
         "symfony/phpunit-bridge": "^4.2",
-        "php-coveralls/php-coveralls": "^2.0"
+        "php-coveralls/php-coveralls": "^2.0",
+        "friendsofphp/php-cs-fixer": "~2.13"
     }
 }
