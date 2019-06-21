@@ -1,11 +1,17 @@
 language: php
 
+cache:
+  directories:
+    - vendor
+
 php:
   - 7.0
   - 7.1
   - 7.2
   - 7.3
-  - hhvm
+
+before_script:
+  - composer install -o --prefer-dist --no-interaction
 
 script:
   - mkdir -p build/logs
