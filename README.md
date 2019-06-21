@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/mnapoli/PiwikTwigExtension.svg)](https://travis-ci.org/mnapoli/PiwikTwigExtension) [![Coverage Status](https://img.shields.io/coveralls/mnapoli/PiwikTwigExtension.svg)](https://coveralls.io/r/mnapoli/PiwikTwigExtension)
 
-This library integrates [Piwik](http://piwik.org/) into [Twig](http://twig.sensiolabs.org/).
+This library integrates [Piwik](http://piwik.org/) into [Twig](https://twig.symfony.com/).
 
 ## Installation
 
