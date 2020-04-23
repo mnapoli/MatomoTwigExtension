@@ -6,7 +6,7 @@ This library integrates [Matomo](http://matomo.org/) into [Twig](https://twig.sy
 
 ## Installation
 
-    composer require "mnapoli/matomo-twig-extension"
+    composer require "mnapoli/piwik-twig-extension"
 
 ## Usage
 

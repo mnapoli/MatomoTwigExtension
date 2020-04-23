@@ -77,7 +77,7 @@ class MatomoTwigExtension extends AbstractExtension
 
         $matomoHost = rtrim($matomoHost, '/');
 
-        $code = <<<HTML
+        return <<<HTML
 <!-- Matomo -->
 <script type="text/javascript">
   var _paq = _paq || [];
@@ -94,7 +94,5 @@ class MatomoTwigExtension extends AbstractExtension
 <noscript><p><img src="http://$matomoHost/matomo.php?idsite=$siteId" style="border:0;" alt="" /></p></noscript>
 <!-- End Matomo Code -->
 HTML;
-
-        return $code;
     }
 }

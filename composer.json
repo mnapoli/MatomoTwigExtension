@@ -1,5 +1,5 @@
 {
-    "name": "mnapoli/matomo-twig-extension",
+    "name": "mnapoli/piwik-twig-extension",
     "license": "MIT",
     "type": "library",
     "autoload": {
