@@ -11,7 +11,7 @@ return array();
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
-    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://example.com/";
+    var u="//example.com/";
     _paq.push(['setTrackerUrl', u+'matomo.php']);
     _paq.push(['setSiteId', 123]);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];

@@ -84,7 +84,7 @@ class MatomoTwigExtension extends AbstractExtension
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
-    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://$matomoHost/";
+    var u="//$matomoHost/";
     _paq.push(['setTrackerUrl', u+'matomo.php']);
     _paq.push(['setSiteId', $siteId]);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
