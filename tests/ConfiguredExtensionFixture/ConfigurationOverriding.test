@@ -1,22 +1,22 @@
 --TEST--
-Calling "piwik" function with parameters to override the default config
+Calling "matomo" function with parameters to override the default config
 --TEMPLATE--
-{{ piwik('foo.com', 42) }}
+{{ matomo('foo.com', 42) }}
 --DATA--
 return array();
 --EXPECT--
-<!-- Piwik -->
+<!-- Matomo -->
 <script type="text/javascript">
   var _paq = _paq || [];
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
     var u=(("https:" == document.location.protocol) ? "https" : "http") + "://foo.com/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
     _paq.push(['setSiteId', 42]);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
-    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
-<noscript><p><img src="http://foo.com/piwik.php?idsite=42" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code -->
+<noscript><p><img src="http://foo.com/matomo.php?idsite=42" style="border:0;" alt="" /></p></noscript>
+<!-- End Matomo Code -->

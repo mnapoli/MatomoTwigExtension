@@ -1,36 +1,36 @@
-# Piwik Twig integration
+# Matomo Twig integration
 
-[![Build Status](https://travis-ci.org/mnapoli/PiwikTwigExtension.svg)](https://travis-ci.org/mnapoli/PiwikTwigExtension) [![Coverage Status](https://img.shields.io/coveralls/mnapoli/PiwikTwigExtension.svg)](https://coveralls.io/r/mnapoli/PiwikTwigExtension)
+[![Build Status](https://travis-ci.org/mnapoli/MatomoTwigExtension.svg)](https://travis-ci.org/mnapoli/MatomoTwigExtension) [![Coverage Status](https://img.shields.io/coveralls/mnapoli/MatomoTwigExtension.svg)](https://coveralls.io/r/mnapoli/MatomoTwigExtension)
 
-This library integrates [Piwik](http://piwik.org/) into [Twig](https://twig.symfony.com/).
+This library integrates [Matomo](http://matomo.org/) into [Twig](https://twig.symfony.com/).
 
 ## Installation
 
-    composer require "mnapoli/piwik-twig-extension"
+    composer require "mnapoli/matomo-twig-extension"
 
 ## Usage
 
-You have 2 ways to give the Piwik host and site ID:
+You have 2 ways to give the Matomo host and site ID:
 
 - When creating the extension (**recommended**)
 
 ```php
-$twig->addExtension(new PiwikTwigExtension('my-piwik-host.com', 123));
+$twig->addExtension(new MatomoTwigExtension('my-matomo-host.com', 123));
 ```
 
-In the templates, you then just call `{{ piwik() }}`.
+In the templates, you then just call `{{ matomo() }}`.
 
 This solution is appropriate in most cases.
 
 - When calling the Twig function
 
 ```php
-$twig->addExtension(new PiwikTwigExtension());
+$twig->addExtension(new MatomoTwigExtension());
 ```
 
-In the templates, you have to provide the host and site id: `{{ piwik('mypiwik.host.com', 123) }}`.
+In the templates, you have to provide the host and site id: `{{ matomo('mymatomo.host.com', 123) }}`.
 
-This solution is perfect if you want to be able to customize the site id or Piwik host in the template.
+This solution is perfect if you want to be able to customize the site id or Matomo host in the template.
 
 ---
 
@@ -45,18 +45,18 @@ Don't forget to add the tracker script at the end of the HTML document, for exam
     <body>
         ...
 
-        {{ piwik() }}
+        {{ matomo() }}
     </body>
 </html>
 ```
 
 ### Development environment
 
-In some environments, you want to disable Piwik's tracking (for example on your local machine).
+In some environments, you want to disable Matomo's tracking (for example on your local machine).
 That is easily possible by passing `false` for the `$enabled` parameter:
 
 ```php
-$twig->addExtension(new PiwikTwigExtension($host, $siteId, false));
+$twig->addExtension(new MatomoTwigExtension($host, $siteId, false));
 ```
 
 

@@ -1,7 +1,7 @@
 --TEST--
-Calling "piwik" function without parameters when the extension is disabled
+Calling "matomo" function without parameters when the extension is disabled
 --TEMPLATE--
-{{ piwik() }}
+{{ matomo() }}
 --DATA--
 return array();
 --EXPECT--
