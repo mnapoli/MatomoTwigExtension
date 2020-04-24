@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\PiwikTwigExtension;
+namespace Tests\MatomoTwigExtension;
 
-use PiwikTwigExtension\PiwikTwigExtension;
+use MatomoTwigExtension\MatomoTwigExtension;
 use Twig\Test\IntegrationTestCase;
 
 class ConfiguredExtensionTest extends IntegrationTestCase
@@ -10,7 +10,7 @@ class ConfiguredExtensionTest extends IntegrationTestCase
     protected function getExtensions()
     {
         return [
-            new PiwikTwigExtension('example.com', 123),
+            new MatomoTwigExtension('example.com', 123),
         ];
     }
 

@@ -1,8 +1,8 @@
 --TEST--
-Calling "piwik" function without the "site id" parameters, leading to an error
+Calling "matomo" function without the "site id" parameters, leading to an error
 --TEMPLATE--
-{{ piwik('example.com') }}
+{{ matomo('example.com') }}
 --DATA--
 return array();
 --EXPECT--
-Twig\Error\Error: Twig\Error\RuntimeError: An exception has been thrown during the rendering of a template ("No Piwik site ID was configured or given to generate the tracker code") in "index.twig" at line 2.
+Twig\Error\Error: Twig\Error\RuntimeError: An exception has been thrown during the rendering of a template ("No Matomo site ID was configured or given to generate the tracker code") in "index.twig" at line 2.

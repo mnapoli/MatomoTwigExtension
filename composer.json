@@ -4,12 +4,12 @@
     "type": "library",
     "autoload": {
         "psr-4": {
-            "PiwikTwigExtension\\": "src/"
+            "MatomoTwigExtension\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\PiwikTwigExtension\\": "tests/"
+            "Tests\\MatomoTwigExtension\\": "tests/"
         }
     },
     "require": {
