@@ -1,5 +1,6 @@
 {
     "name": "mnapoli/piwik-twig-extension",
+    "description": "This library integrates Matomo into Twig",
     "license": "MIT",
     "type": "library",
     "autoload": {
@@ -14,10 +15,10 @@
     },
     "require": {
         "php": ">=7.0",
-        "twig/twig": "~2.10"
+        "twig/twig": "~2.10|~3.0"
     },
     "require-dev": {
-        "symfony/phpunit-bridge": "^4.2",
+        "symfony/phpunit-bridge": "^5.0",
         "php-coveralls/php-coveralls": "^2.0",
         "friendsofphp/php-cs-fixer": "~2.13"
     }
