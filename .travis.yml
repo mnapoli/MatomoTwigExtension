@@ -1,22 +1,32 @@
+dist: xenial
+os: linux
 language: php
 
 cache:
-  directories:
-    - vendor
+    directories:
+        - $HOME/.composer/cache/files
 
 php:
-  - 7.0
-  - 7.1
-  - 7.2
-  - 7.3
+    - 7.0
+    - 7.1
+    - 7.2
+    - 7.3
+    - 7.4
+
+jobs:
+    include:
+        -
+            php: 7.3
+            env: DEPENDENCIES=LOWEST
 
 before_script:
-  - composer install -o --prefer-dist --no-interaction
+    - composer install -o --prefer-dist --no-interaction
+    - if [ "$DEPENDENCIES" = "LOWEST" ]; then composer update --prefer-lowest --prefer-stable -n; fi;
 
 script:
-  - mkdir -p build/logs
-  - php vendor/bin/php-cs-fixer fix --verbose --dry-run
-  - php vendor/bin/simple-phpunit -v --coverage-clover build/logs/clover.xml
+    - mkdir -p build/logs
+    - php vendor/bin/php-cs-fixer fix --verbose --dry-run
+    - php vendor/bin/simple-phpunit -v --coverage-clover build/logs/clover.xml
 
 after_script:
-  - php vendor/bin/php-coveralls -v
+    - php vendor/bin/php-coveralls -v

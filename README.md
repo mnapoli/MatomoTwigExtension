@@ -1,8 +1,9 @@
 # Matomo Twig integration
 
-[![Build Status](https://travis-ci.org/mnapoli/MatomoTwigExtension.svg)](https://travis-ci.org/mnapoli/MatomoTwigExtension) [![Coverage Status](https://img.shields.io/coveralls/mnapoli/MatomoTwigExtension.svg)](https://coveralls.io/r/mnapoli/MatomoTwigExtension)
+[![Build Status](https://travis-ci.org/mnapoli/MatomoTwigExtension.svg)](https://travis-ci.org/mnapoli/MatomoTwigExtension)
+[![Coverage Status](https://img.shields.io/coveralls/mnapoli/MatomoTwigExtension.svg)](https://coveralls.io/r/mnapoli/MatomoTwigExtension)
 
-This library integrates [Matomo](http://matomo.org/) into [Twig](https://twig.symfony.com/).
+This library integrates [Matomo](https://matomo.org//) into [Twig](https://twig.symfony.com/). _Previously named PiwikTwigExtension_.
 
 ## Installation
 
@@ -14,23 +15,23 @@ You have 2 ways to give the Matomo host and site ID:
 
 - When creating the extension (**recommended**)
 
-```php
-$twig->addExtension(new MatomoTwigExtension('my-matomo-host.com', 123));
-```
+    ```php
+    $twig->addExtension(new MatomoTwigExtension('my-matomo-host.com', 123));
+    ```
 
-In the templates, you then just call `{{ matomo() }}`.
+    In the templates, you then just call `{{ matomo() }}`.
 
-This solution is appropriate in most cases.
+    This solution is appropriate in most cases.
 
 - When calling the Twig function
 
-```php
-$twig->addExtension(new MatomoTwigExtension());
-```
+    ```php
+    $twig->addExtension(new MatomoTwigExtension());
+    ```
 
-In the templates, you have to provide the host and site id: `{{ matomo('mymatomo.host.com', 123) }}`.
+    In the templates, you have to provide the host and site id: `{{ matomo('my-matomo-host.com', 123) }}`.
 
-This solution is perfect if you want to be able to customize the site id or Matomo host in the template.
+    This solution is perfect if you want to be able to customize the site id or Matomo host in the template.
 
 ---
 
@@ -58,7 +59,6 @@ That is easily possible by passing `false` for the `$enabled` parameter:
 ```php
 $twig->addExtension(new MatomoTwigExtension($host, $siteId, false));
 ```
-
 
 ## License
 
