@@ -1,6 +1,6 @@
 # Matomo Twig integration
 
-[![Build Status](https://travis-ci.org/mnapoli/MatomoTwigExtension.svg)](https://travis-ci.org/mnapoli/MatomoTwigExtension)
+[![Build Status](https://travis-ci.com/mnapoli/MatomoTwigExtension.svg?branch=master)](https://travis-ci.com/mnapoli/MatomoTwigExtension)
 
 This library integrates [Matomo](https://matomo.org//) into [Twig](https://twig.symfony.com/). _Previously named PiwikTwigExtension_.
 
